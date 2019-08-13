@@ -54,7 +54,7 @@
 
     List<PizzaSpecial> specials;
 
-    protected async override Task OnInitAsync()
+    protected async override Task OnInitializedAsync()
     {
         OrderState.StateChanged += OnOrderStateChanged;
         specials = await Store.GetSpecials();

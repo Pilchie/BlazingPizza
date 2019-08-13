@@ -63,7 +63,7 @@
 </div>
 
 @functions {
-    [Parameter] int OrderId { get; set; }
+    [Parameter] public int OrderId { get; set; }
     [CascadingParameter] UserStateProvider UserState { get; set; }
 
     Order order;
@@ -89,7 +89,7 @@
 
     void OrderStatusChanged(object sender, OrderStatus orderStatus)
     {
-        Invoke(() =>
+        InvokeAsync(() =>
         {
             if (orderStatus.OrderId == order.OrderId)
             {
